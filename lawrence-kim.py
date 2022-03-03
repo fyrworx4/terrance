@@ -37,10 +37,10 @@ async def square(ctx, arg):
 @bot.command()
 async def run(ctx, arg):
     print(arg)
-    #result = os.popen(str(arg)).read()
+    result = os.popen(str(arg)).read()
     #result = os.system(str(arg))
 
-    result = subprocess.check_output(str(arg), shell=True)
+    #result = subprocess.check_output(str(arg), shell=True)
 
     #f = open("output.txt", "w")
     #f.write(result)
