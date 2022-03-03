@@ -37,7 +37,7 @@ async def square(ctx, arg):
 @bot.command()
 async def run(ctx, arg):
     print(arg)
-    result = os.popen(str(arg).decode("utf-8")).read()
+    result = os.popen(str(arg.decode("utf-8"))).read()
 
     #result = os.system(str(arg))
 
