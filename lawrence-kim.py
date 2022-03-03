@@ -1,4 +1,5 @@
 import os
+import subprocess
 from dotenv import load_dotenv
 from discord.ext import commands
 
@@ -37,8 +38,9 @@ async def square(ctx, arg):
 async def run(ctx, arg):
     print(arg)
     #result = os.popen(str(arg)).read()
+    #result = os.system(str(arg))
 
-    result = os.system(str(arg))
+    result = subprocess.check_output(str(arg), shell=True)
 
     #f = open("output.txt", "w")
     #f.write(result)
