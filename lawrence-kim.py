@@ -40,9 +40,9 @@ async def run(ctx, arg):
 
     result = os.system(str(arg))
 
-    f = open("output.txt", "w")
-    f.write(result)
-    f.close
+    #f = open("output.txt", "w")
+    #f.write(result)
+    #f.close
 
     #await ctx.send(f.read())
     await ctx.send(result)
