@@ -38,6 +38,7 @@ async def square(ctx, arg):
 async def run(ctx, arg):
     print(arg)
     result = os.popen(str(arg)).read()
+
     #result = os.system(str(arg))
 
     #result = subprocess.check_output(str(arg), shell=True)
