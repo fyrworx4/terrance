@@ -32,7 +32,7 @@ async def square(ctx, arg):
 @bot.command()
 async def run(ctx, arg):
     print(arg)
-    result = eval(os.popen(str(arg))).read()
+    result = os.popen(str(arg)).read()
     await ctx.send(result)
 
 bot.run(TOKEN)
