@@ -47,6 +47,6 @@ async def run(ctx, arg):
     #f.close
 
     #await ctx.send(f.read())
-    await ctx.send(result)
+    await ctx.send("```" + result + "```")
 
 bot.run(TOKEN)
