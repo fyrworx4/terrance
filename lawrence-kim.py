@@ -7,6 +7,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix="!")
 
+
 @bot.event
 async def on_ready():
     print(f'{bot.user} succesfully logged in!')
@@ -36,6 +37,11 @@ async def square(ctx, arg):
 async def run(ctx, arg):
     print(arg)
     result = os.popen(str(arg)).read()
-    await ctx.send(result)
+
+    f = open("output.txt", "w")
+    f.write(result)
+    f.close
+
+    await ctx.send(f.read())
 
 bot.run(TOKEN)
