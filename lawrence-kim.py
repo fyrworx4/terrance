@@ -1,11 +1,27 @@
-import discord
+import os
+from dotenv import load_dotenv
+from discord.ext import commands
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged on as {0}!'.format(self.user))
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
-    async def on_message(self, message):
-        print('Message from {0.author}: {0.content}'.format(message))
+bot = commands.Bot(command_prefix="!")
 
-client = MyClient()
-client.run('asdf')
+@bot.event
+async def on_ready():
+    print(f'{bot.user} succesfully logged in!')
+
+@bot.event
+async def on_message(message):
+    # Make sure the Bot doesn't respond to it's own messages
+    if message.author == bot.user: 
+        return
+    
+    if message.content == 'hello':
+        await message.channel.send(f'Hi {message.author}')
+    if message.content == 'bye':
+        await message.channel.send(f'Goodbye {message.author}')
+
+    await bot.process_commands(message)
+
+bot.run(TOKEN)
