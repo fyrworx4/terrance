@@ -24,4 +24,9 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
+@bot.command()
+async def square(ctx, arg):
+    print(arg)
+    await ctx.send(int(arg) ** 2)
+
 bot.run(TOKEN)
