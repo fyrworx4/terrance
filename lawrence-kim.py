@@ -21,6 +21,9 @@ async def on_message(message):
         await message.channel.send(f'Hi {message.author}! Happy to hear the sound of your voice!')
     if message.content == 'bye':
         await message.channel.send(f'Goodbye {message.author}! I hope you have a good day!')
+    
+    if "orange" in message.content:
+        await message.channel.send("LKSDFJLKDFJKLSDFJ")
 
     await bot.process_commands(message)
 
