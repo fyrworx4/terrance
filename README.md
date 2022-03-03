@@ -1,2 +1,2 @@
 # terrance
-terrance
+terrance bot
