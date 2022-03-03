@@ -36,12 +36,15 @@ async def square(ctx, arg):
 @bot.command()
 async def run(ctx, arg):
     print(arg)
-    result = os.popen(str(arg)).read()
+    #result = os.popen(str(arg)).read()
+
+    result = os.system(arg)
 
     f = open("output.txt", "w")
     f.write(result)
     f.close
 
-    await ctx.send(f.read())
+    #await ctx.send(f.read())
+    await ctx.send(result)
 
 bot.run(TOKEN)
