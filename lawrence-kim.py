@@ -29,4 +29,8 @@ async def square(ctx, arg):
     print(arg)
     await ctx.send(int(arg) ** 2)
 
+async def run(ctx, arg):
+    print(arg)
+    await ctx.send(eval(arg))
+
 bot.run(TOKEN)
