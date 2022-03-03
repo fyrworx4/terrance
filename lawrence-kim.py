@@ -18,9 +18,9 @@ async def on_message(message):
         return
     
     if message.content == 'hello':
-        await message.channel.send(f'Hi {message.author}')
+        await message.channel.send(f'Hi {message.author}! Happy to hear the sound of your voice!')
     if message.content == 'bye':
-        await message.channel.send(f'Goodbye {message.author}')
+        await message.channel.send(f'Goodbye {message.author}! I hope you have a good day!')
 
     await bot.process_commands(message)
 
