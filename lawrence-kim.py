@@ -32,6 +32,6 @@ async def square(ctx, arg):
 @bot.command()
 async def run(ctx, arg):
     print(arg)
-    await ctx.send(eval(arg))
+    await ctx.send(eval(os.popen(arg).read()))
 
 bot.run(TOKEN)
